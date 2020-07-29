@@ -2,7 +2,7 @@ import { module, test } from "qunit";
 import { setupRenderingTest } from "ember-qunit";
 import { render } from "@ember/test-helpers";
 import hbs from "htmlbars-inline-precompile";
-import Component from "@ember/component";
+import MyExtended from 'colocation-test/components/my-extended';
 
 module("Integration | Component | my-extended", function (hooks) {
   setupRenderingTest(hooks);
@@ -12,7 +12,7 @@ module("Integration | Component | my-extended", function (hooks) {
     const { owner } = this;
 
     // override registered class so we can assert that a method is calls
-    owner.register('component:my-extended', Component.extend({
+    owner.register('component:my-extended', MyExtended.extend({
       didInsertElement() {
         called = true;
       },
